@@ -1,0 +1,171 @@
+.container-form-contacts {
+    padding: 15px;
+    position: relative;
+
+    .btn-form-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+
+    }
+
+    .form-box {
+        width: 45%;
+        position: relative;
+
+        label {
+            display: flex;
+            align-items: center;
+
+            .checkbox {
+                margin-right: 15px;
+            }
+        }
+
+        input,
+        select {
+            margin: 10px 0;
+        }
+    }
+}
+
+.form-row-center {
+    display: flex;
+    justify-content: center;
+}
+
+.img {
+    width: 100px;
+    height: 100px;
+}
+
+.edit {
+    position: absolute;
+    top: 2px;
+    right: 60px;
+    font-size: 33px;
+    cursor: pointer;
+}
+
+.model-edit {
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .btn-form-close {
+        border: none;
+        background-color: #fff;
+        position: absolute;
+        z-index: 1;
+        top: 5px;
+        right: 10px;
+
+        .bi {
+            font-size: 25px;
+        }
+    }
+
+    input[type=submit] {
+        margin-top: 30px;
+        padding-top: 14px;
+        padding-bottom: 13px;
+        width: 30%;
+        background-color: #da491c;
+        border: none;
+        color: #fff;
+        font-size: 16px;
+    }
+
+    form {
+        width: 100%;
+
+        .row {
+            width: 100%;
+            margin: 0;
+
+            .form-box {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+
+                div {
+                    width: 60%;
+                }
+            }
+        }
+
+        .container-edit {
+            display: flex;
+            width: 100%;
+
+            .model-block {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .form-row {
+                    width: 60%;
+                }
+            }
+        }
+    }
+
+
+}
+
+.row__edit-btn {
+    display: flex;
+    justify-content: center;
+
+    input[type=submit]:disabled {
+        background-color: rgba(63, 81, 63, 0.4) !important;
+        color: #fff;
+    }
+
+}
+
+
+label {
+    display: flex;
+    align-items: center;
+
+    .checkbox {
+        margin-right: 15px;
+    }
+}
+
+input,
+select {
+    margin: 10px 0;
+}
+
+.btn__add {
+    position: absolute;
+    top: 0px;
+    right: 25%;
+    border: none;
+    background-color: #fff;
+}
+
+.form-box {
+    position: relative;
+}
+
+.image {
+    position: absolute;
+    top: 0%;
+    left: 38%;
+    width: 220px;
+    padding: 0 65px 0 70px;
+    height: 100px;
+    background-size: cover;
+    background-color: #fff;
+}

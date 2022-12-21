@@ -1,0 +1,98 @@
+<div class="container-form-contacts " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+aria-hidden="true" data-mdb-backdrop="static" data-mdb-keyboard="true">
+  <button
+    type="button"
+    class="btn-form-close "
+    aria-label="Close"
+    (click)="close()"
+  ><i class="bi bi-x"></i></button>
+  <form [formGroup]="contactForm" novalidate (ngSubmit)="submit()">
+
+    <div class="form-row">
+      <div class="form-box">
+        <label for="lastName">Прізвище:</label>
+        <input class="form-control" type="text" id="lastName" placeholder="Прізвище" formControlName="lastName">
+      </div>
+      <div class="form-box">
+        <label for="firstName">Ім'я:</label>
+        <input class="form-control" type="text" id="firstName" placeholder="Ім'я" formControlName="firstName">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-box">
+        <label for="surName">По батькові: </label>
+      <input class="form-control" type="text" id="surName" placeholder="По батькові" formControlName="surName">
+      </div>
+      <div class="form-box">
+        <label for="surName">Дата народження: </label>
+        <input class="form-control" type="date" name="" id="" formControlName="date">
+      </div>
+    </div>
+
+
+    <div class="form-row">
+      <div class="form-box">
+        <label>Пошта: </label>
+        <ng-container formArrayName="emails">
+          <ng-container *ngFor="let emailForm of emails.controls; let index = index">
+            <div [formGroupName]="index">
+  
+              <input type="email" class="email form-control" id="email{{index}}" placeholder="Пошта"
+                formControlName="email">
+            </div>
+          </ng-container>
+        </ng-container>
+        <button class="btn__add" *ngIf="emails.controls.length < 3" (click)="addEmail()"><i
+          class="bi bi-plus-circle-fill"></i></button>
+      </div>
+  
+      <div class="form-box">
+        <label for="phone">Номер телефону: </label>
+        <ng-container formArrayName="phones">
+          <ng-container *ngFor="let phoneForm of phones.controls; let index = index">
+            <div [formGroupName]="index">
+              <input type="tel" class="phone form-control" id="phone{{index}}" placeholder="Номер телефону"
+                formControlName="phone">
+            </div>
+          </ng-container>
+        </ng-container>
+        <button class="btn__add" *ngIf="phones.controls.length < 3" (click)="addPhone()"><i
+            class="bi bi-plus-circle-fill"></i></button>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-box">
+        <label for="stateClient">Статус клієнта</label>
+        <select class="form-control" id="stateClient" name="stateClient" formControlName="select">
+          <option *ngFor="let item of stateClientSelect ; let i = index"
+          [value]="i == 0 ? '' : item " [disabled]="i == 0 ? true : false">{{item}}</option>
+        </select>
+      </div>
+
+
+      <div class="form-box" formArrayName="Channel">
+        <label *ngFor="let chanel of channels.controls; let i = index">
+          <ng-container [formGroupName]="i">
+            <input class="form-check checkbox" type="checkbox" formControlName="isActive">
+              {{ chanel.value.name }}
+            >
+          </ng-container>
+        </label>
+        <small style="color: red;" *ngIf="channels.hasError('hasError') && channels.touched">
+          Choose at least one
+        </small>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-box">
+        <label for="lastName">Фото клієнта:</label>
+        <input class="form-control" (change)="onChangeFile($event)" type="file" id="image" formControlName="image">
+      </div>
+      <img *ngIf="file" class="files_img" src="http://localhost:8218/{{imagesURL}}" alt="imgFile">
+    </div>
+    <input [disabled]="contactForm.invalid"  type="submit" (submit)="submit()">
+  </form>
+</div>

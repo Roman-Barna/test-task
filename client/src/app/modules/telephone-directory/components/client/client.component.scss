@@ -1,0 +1,118 @@
+td,
+th {
+  border: 1px solid #b7b6b6;
+  text-align: center;
+  padding: 8px;
+}
+
+td > p {
+  display: flex;
+  align-items: center;
+}
+
+.bi {
+  font-size: 12px;
+  margin-right: 7px;
+  cursor: pointer;
+}
+
+.img {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+}
+
+.div {
+  position: relative;
+
+  .menu-btn {
+    position: absolute;
+    display: flex;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -105px;
+
+    .edit {
+      font-size: 25px;
+      opacity: 0.4;
+      transition: 0.7s ease;
+
+      &:hover {
+        opacity: 1;
+        color: rgb(31, 135, 142);
+      }
+    }
+
+    .delete {
+      font-size: 25px;
+      opacity: 0.4;
+      transition: 0.7s ease;
+
+      &:hover {
+        opacity: 1;
+        color: rgb(176, 46, 37);
+      }
+    }
+
+    .read {
+      font-size: 25px;
+      opacity: 0.4;
+      transition: 0.7s ease;
+
+      &:hover {
+        opacity: 1;
+        color: rgb(80, 191, 112);
+      }
+    }
+  }
+}
+
+.main {
+  table {
+    width: 100%;
+  }
+
+  tr.example-detail-row {
+    height: 0;
+  }
+
+  tr.example-element-row:not(.example-expanded-row):hover {
+    background: whitesmoke;
+  }
+
+  tr.example-element-row:not(.example-expanded-row):active {
+    background: #efefef;
+  }
+
+  .example-element-row td {
+    border-bottom-width: 0;
+  }
+
+  .example-element-detail {
+    overflow: hidden;
+    display: flex;
+  }
+
+  .example-element-diagram {
+    min-width: 80px;
+    border: 2px solid black;
+    padding: 8px;
+    font-weight: lighter;
+    margin: 8px 0;
+    height: 104px;
+  }
+
+  .example-element-symbol {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: normal;
+  }
+
+  .example-element-description {
+    padding: 16px;
+  }
+
+  .example-element-description-attribution {
+    opacity: 0.5;
+  }
+}

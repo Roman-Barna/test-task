@@ -1,0 +1,10 @@
+<section class="section__tel-directory">
+    <img src="/assets/logo/logo-main.png" alt="">
+    <h3 >Створити контакт <br> <span  style="margin-left:260px;">можна тут</span></h3>
+<button 
+[ngClass]="contactsClient.length == 0 ? 'button-Add-center' : 'button-Add'"
+
+(click)="openModal()"
+>Додати контакт</button>
+</section>
+<app-contact-list></app-contact-list>

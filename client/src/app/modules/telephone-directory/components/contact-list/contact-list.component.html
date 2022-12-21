@@ -1,0 +1,22 @@
+<section *ngIf="contactsClient.length != 0" class="section-contact">
+    <div class="client-container">
+        <h2>Мої контакти:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Фото</th>
+                    <th>Прізвище</th>
+                    <th>Ім'я</th>
+                    <th>По батькові</th>
+                    <th>Дата народження</th>
+                    <th>Пошта</th>
+                    <th>Номер телефону</th>
+                    <th>Статус клієнта</th>
+                    <th>Історія розмов</th>
+                    </tr>
+            </thead>
+        <tr app-client *ngFor="let client of contactsClient" [client]="client"></tr>  
+
+        </table>
+    </div>
+</section>

@@ -1,0 +1,30 @@
+<td><img class="img" src="http://localhost:8218/{{client.image ? client.image : 'no-image.png'}}" alt=""></td>
+    <td>{{client.lastName}}</td>
+    <td>{{client.firstName}}</td>
+    <td>{{client.surName}}</td>
+    <td>{{client.date}}</td>
+    <td><p *ngFor="let e of client.emails">
+        <i class="bi bi-envelope"></i>
+        {{e.email}}</p></td>
+    <td><p *ngFor="let p of client.phones">
+        <i class="bi bi-telephone-outbound-fill"></i>
+        {{p.phone}}</p></td>
+    <td>{{client.select}}</td>
+    <td>
+        <div class="div">
+            <div class="menu-btn">
+                <i 
+                (click)="openModal(client, true)"
+                class="bi bi-pencil-square edit"></i>
+                <i 
+                (click)="deleteClient(client._id)"
+                class="bi bi-trash-fill delete"></i>
+                <i
+                (click)="openModal(client, false)"
+                class="bi bi-book-half read"></i>
+            </div>
+            <p 
+            [style.display]="item.isActive ? 'block' : 'none'"
+            *ngFor="let item of client.Channel">{{item.isActive ? item.name : null}}</p>
+        </div>
+    </td>
